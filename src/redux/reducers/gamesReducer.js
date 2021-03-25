@@ -1,3 +1,5 @@
+
+
 const initState = {
   popular: [],
   newGames: [],

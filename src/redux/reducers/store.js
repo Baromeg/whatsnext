@@ -3,9 +3,11 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import gamesReducer from './gamesReducer'
+import tvReducer from './tvReducer'
 
 const rootReducer = combineReducers({
-  games: gamesReducer
+  games: gamesReducer,
+  tv: tvReducer
 })
 
 const middleware = [thunk]

@@ -32,12 +32,15 @@ const newGames = `games?dates=${lastYear},${currentDate}&ordering=-released&page
 // * Movies and TV Series
 // export const top250MoviesURL = () => `${base_url_movies}${top250Movies}`
 // export const top250TVSeriesURL = () => `${base_url_movies}${top250TVSeries}`
-export const searchOMDBURL = () => `${base_url_moviesOMDB}${searchOMDB}`
+export const searchOMDBURL = (searched) => `${base_url_moviesOMDB}${searchOMDB}`
 
 // * Games
 export const popularGamesURL = () => `${base_url_games}${popularGames}`
 export const upcomingGamesURL = () => `${base_url_games}${upcomingGames}`
 export const newGamesURL = () => `${base_url_games}${newGames}`
+
+// * Games Details
+export const gameDetailsURL = (game_id) => `${base_url_games}games/${game_id}`
 
 console.log(searchOMDBURL())
 console.log(newGamesURL())

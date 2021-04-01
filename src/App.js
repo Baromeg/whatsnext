@@ -2,12 +2,14 @@ import React from 'react'
 
 // * Components and Pages
 import Home from './pages/home'
+import GlobalStyles from './components/GlobalStyles'
 
 require('dotenv').config()
 
 function App() {
   return (
-    <div className='App'>
+    <div className='app'>
+      <GlobalStyles />
       {/* <h1>Hello What's Next!</h1> */}
       <Home />
     </div>

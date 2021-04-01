@@ -1,18 +1,15 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { loadGames } from './redux/actions/gamesActions'
-import { loadTV } from './redux/actions/tvActions'
+import React from 'react'
+
+// * Components and Pages
+import Home from './pages/home'
+
 require('dotenv').config()
 
 function App() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(loadGames())
-    dispatch(loadTV())
-  })
   return (
     <div className='App'>
-      <h1>Hello What's Next!</h1>
+      {/* <h1>Hello What's Next!</h1> */}
+      <Home />
     </div>
   )
 }

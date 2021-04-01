@@ -1,6 +1,7 @@
 const initState = {
-  topMovies: [],
-  topTVSeries: [],
+  // topMovies: [],
+  // topTVSeries: [],
+  searchOMDB: []
 }
 
 const tvReducer = (state = initState, action) => {
@@ -8,8 +9,9 @@ const tvReducer = (state = initState, action) => {
     case 'FETCH_TV':
       return {
         ...state,
-        topMovies: action.payload.topMovies,
-        topTVSeries: action.payload.topTVSeries
+        // topMovies: action.payload.topMovies,
+        // topTVSeries: action.payload.topTVSeries
+        searchOMDB: action.payload.searchOMDB
       }
     default:
       return { ...state }

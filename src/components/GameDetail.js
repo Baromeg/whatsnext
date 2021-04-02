@@ -13,27 +13,27 @@ const GameDetail = () => {
   return (
     <CardShadowStyled>
       <DetailStyled>
-        <div className='stats'>
-          <div className='rating'>
+        <StatsStyled>
+          <RatingStyled>
             <h3>{game.name}</h3>
             <p>Rating: {game.rating}</p>
-          </div>
-          <div className='info'>
+          </RatingStyled>
+          <InfoStyled>
             <h3>Platforms</h3>
-            <div className='platforms'>
+            <PlatformsStyled>
               {game.platforms &&
                 game.platforms.map((data, i) => (
                   <h3 key={i}>{data.platform.name}</h3>
                 ))}
-            </div>
-          </div>
-        </div>
-        <div className='media'>
+            </PlatformsStyled>
+          </InfoStyled>
+        </StatsStyled>
+        <MediaStyled>
           <img src={game.background_image} alt={game.name} />
-        </div>
-        <div className='description'>
+        </MediaStyled>
+        <DescriptionStyled>
           <p>{game.description_raw}</p>
-        </div>
+        </DescriptionStyled>
         <div className='gallery'>
           {screen.results &&
             screen.results.map((screen, i) => (
@@ -66,7 +66,7 @@ const CardShadowStyled = styled(motion.div)`
 const DetailStyled = styled(motion.div)`
   width: 80%;
   border-radius: 1rem;
-  padding: 2rem 20rem;
+  padding: 2rem 5rem;
   background: white;
   position: absolute;
   left: 10%;
@@ -76,5 +76,37 @@ const DetailStyled = styled(motion.div)`
   }
 `
 
-const StatsStyled = styled(motion.div)``
+const StatsStyled = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const RatingStyled = styled(motion.div)``
+
+const InfoStyled = styled(motion.div)`
+  text-align: center;
+`
+
+const PlatformsStyled = styled(motion.div)`
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    margin-left: 3rem;
+  }
+`
+
+const MediaStyled = styled(motion.div)`
+  margin-top: 5rem;
+  img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+`
+
+const DescriptionStyled = styled(motion.div)`
+  padding: 5rem 0rem;
+`
+
 export default GameDetail

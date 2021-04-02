@@ -9,39 +9,43 @@ import { useSelector } from 'react-redux'
 
 const GameDetail = () => {
   // Data
-  const { screen, game } = useSelector((state) => state.detail)
+  const { screen, game, isLoading } = useSelector((state) => state.detail)
   return (
-    <CardShadowStyled>
-      <DetailStyled>
-        <StatsStyled>
-          <RatingStyled>
-            <h3>{game.name}</h3>
-            <p>Rating: {game.rating}</p>
-          </RatingStyled>
-          <InfoStyled>
-            <h3>Platforms</h3>
-            <PlatformsStyled>
-              {game.platforms &&
-                game.platforms.map((data, i) => (
-                  <h3 key={i}>{data.platform.name}</h3>
+    <>
+      {!isLoading && (
+        <CardShadowStyled>
+          <DetailStyled>
+            <StatsStyled>
+              <RatingStyled>
+                <h3>{game.name}</h3>
+                <p>Rating: {game.rating}</p>
+              </RatingStyled>
+              <InfoStyled>
+                <h3>Platforms</h3>
+                <PlatformsStyled>
+                  {game.platforms &&
+                    game.platforms.map((data, i) => (
+                      <h3 key={i}>{data.platform.name}</h3>
+                    ))}
+                </PlatformsStyled>
+              </InfoStyled>
+            </StatsStyled>
+            <MediaStyled>
+              <img src={game.background_image} alt={game.name} />
+            </MediaStyled>
+            <DescriptionStyled>
+              <p>{game.description_raw}</p>
+            </DescriptionStyled>
+            <div className='gallery'>
+              {screen.results &&
+                screen.results.map((screen, i) => (
+                  <img src={screen.image} key={i} alt={game.name} />
                 ))}
-            </PlatformsStyled>
-          </InfoStyled>
-        </StatsStyled>
-        <MediaStyled>
-          <img src={game.background_image} alt={game.name} />
-        </MediaStyled>
-        <DescriptionStyled>
-          <p>{game.description_raw}</p>
-        </DescriptionStyled>
-        <div className='gallery'>
-          {screen.results &&
-            screen.results.map((screen, i) => (
-              <img src={screen.image} key={i} alt={game.name} />
-            ))}
-        </div>
-      </DetailStyled>
-    </CardShadowStyled>
+            </div>
+          </DetailStyled>
+        </CardShadowStyled>
+      )}
+    </>
   )
 }
 const CardShadowStyled = styled(motion.div)`

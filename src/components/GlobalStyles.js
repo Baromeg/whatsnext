@@ -21,8 +21,14 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     width: 100%;
   }
+  h1{
+    font-size: 2.8rem;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: lighter;
+    color: #ff7676;
+  }
   h2{
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: 'Luckiest Guy', cursive;
     font-weight: lighter;
     color: #ff7676
@@ -43,6 +49,10 @@ const GlobalStyles = createGlobalStyle`
   }
   img{
     display:block;
+  }
+  input{
+    font-weight: bold;
+    font-family: 'Monserrat', sans-serif
   }
 `
 

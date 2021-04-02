@@ -1,10 +1,6 @@
 import React, { useEffect } from 'react'
 import GameDetail from '../components/GameDetail'
 
-// * Styling and Animation
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
-
 // * Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { loadGames } from '../redux/actions/gamesActions'
@@ -13,7 +9,16 @@ import { loadTV } from '../redux/actions/tvActions'
 // * Components
 import Game from '../components/Game'
 
+// * Styling and Animation
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
+
 const Home = () => {
+  // Get the current location
+  const location = useLocation()
+  const pathID = location.pathname.split('/')[2]
+
   // Fetch Games
   const dispatch = useDispatch()
   useEffect(() => {
@@ -27,12 +32,12 @@ const Home = () => {
   // console.log(searchOMDB)
   return (
     <GameList>
-      <GameDetail />
+      {pathID && <GameDetail />}
       <h2>Upcoming Games</h2>
       <Games>
-        {upcoming.map((game, i) => (
+        {upcoming.map((game) => (
           <Game
-            key={i}
+            key={game.id}
             name={game.name}
             released={game.released}
             id={game.id}

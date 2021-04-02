@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import GameDetail from '../components/GameDetail'
 
 // * Styling and Animation
 import styled from 'styled-components'
@@ -26,6 +27,7 @@ const Home = () => {
   // console.log(searchOMDB)
   return (
     <GameList>
+      <GameDetail />
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game, i) => (

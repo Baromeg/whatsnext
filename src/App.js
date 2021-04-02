@@ -1,7 +1,7 @@
 import React from 'react'
 
 // * Components and Pages
-import Home from './pages/home'
+import Home from './pages/Home'
 import GlobalStyles from './components/GlobalStyles'
 
 require('dotenv').config()

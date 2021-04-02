@@ -1,6 +1,8 @@
 // require('dotenv').config()
+// * Cors URL
+const cors_url = 'https://cors-anywhere.herokuapp.com/'
 
-// Base URL
+// * Base URL
 // const base_url_moviesIMDB = 'https://imdb-api.com/en/API/'
 const base_url_moviesOMDB = 'http://www.omdbapi.com/'
 const base_url_games = 'https://api.rawg.io/api/'
@@ -25,9 +27,9 @@ const OMDB_KEY = process.env.REACT_APP_OMDB_KEY
 const searchOMDB = `?apikey=${OMDB_KEY}&s=batman&type=movie`
 
 // * RAWG
-const popularGames = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10&key=${RAWG_KEY}`
-const upcomingGames = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10&key=${RAWG_KEY}`
-const newGames = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10&key=${RAWG_KEY}`
+const popularGames = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10?key=${RAWG_KEY}`
+const upcomingGames = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10?key=${RAWG_KEY}`
+const newGames = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10?key=${RAWG_KEY}`
 
 // * Movies and TV Series
 // export const top250MoviesURL = () => `${base_url_movies}${top250Movies}`
@@ -40,7 +42,11 @@ export const upcomingGamesURL = () => `${base_url_games}${upcomingGames}`
 export const newGamesURL = () => `${base_url_games}${newGames}`
 
 // * Games Details
-export const gameDetailsURL = (game_id) => `${base_url_games}games/${game_id}`
+export const gameDetailsURL = (game_id) =>
+  `${base_url_games}games/${game_id}?key=${RAWG_KEY}`
 
-console.log(searchOMDBURL())
+// * Game Screenshots
+export const gameScreenshotURL = (game_id) =>
+  `${base_url_games}games/${game_id}/screenshots?key=${RAWG_KEY}`
+console.log(gameScreenshotURL())
 console.log(newGamesURL())

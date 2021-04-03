@@ -95,6 +95,11 @@ const GameDetail = ({ pathID }) => {
               </InfoStyled>
             </StatsStyled>
             <MediaStyled>
+              {game.clip && (
+                <video controls autoPlay loop>
+                  <source src={game.clip.clips.full} />
+                </video>
+              )}
               <motion.img
                 layoutId={`image ${pathID}`}
                 src={smallImage(game.background_image, 1280)}

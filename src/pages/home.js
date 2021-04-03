@@ -13,6 +13,7 @@ import Game from '../components/Game'
 import styled from 'styled-components'
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
+import { fadeIn, popUp } from '../animations'
 
 const Home = () => {
   // Get the current location
@@ -33,7 +34,7 @@ const Home = () => {
   const { searchOMDB } = useSelector((state) => state.tv)
   // console.log(searchOMDB)
   return (
-    <GameList>
+    <GameList variant={fadeIn} initial='hidden' animate='show'>
       <AnimateSharedLayout type='crossfade'>
         <AnimatePresence>
           {pathID && <GameDetail pathID={pathID} />}
@@ -89,6 +90,7 @@ const Home = () => {
               released={game.released}
               id={game.id}
               image={game.background_image}
+              clip={game.clip}
             />
           ))}
         </Games>
@@ -114,3 +116,6 @@ const Games = styled(motion.div)`
   grid-row-gap: 5rem;
 `
 export default Home
+{
+  /* <video playsinline="" loop="" preload="auto" poster="https://media.rawg.io/media/games/0c5/0c5c311d20379703bdc1e8126c1d798e.jpg" src="https://media.rawg.io/media/stories-640/956/956ee53c49320e6aaa3df0ad6875b510.mp4" style="transform-origin: 48.1928% 95.1065% 0px; opacity: 0; visibility: visible; transform: translate3d(0px, 0px, 0px) scale(0.801052, 0.527141);"></video> */
+}

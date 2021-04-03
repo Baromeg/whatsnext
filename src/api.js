@@ -54,4 +54,4 @@ export const searchGameURL = (game_name) =>
   `${base_url_games}games?search=${game_name}&page_size=9&key=${RAWG_KEY}`
 
 console.log(gameScreenshotURL())
-console.log(searchGameURL())
+console.log(gameDetailsURL())

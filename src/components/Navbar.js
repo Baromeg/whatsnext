@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 // * Styling and Animation
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { fadeIn } from '../animations'
 
 // Redux and Routes
 import { fetchSearch } from '../redux/actions/gamesActions'
@@ -28,7 +29,7 @@ const Navbar = () => {
     dispatch({ type: 'CLEAR_SEARCHED' })
   }
   return (
-    <NavStyled>
+    <NavStyled variants={fadeIn} initial='hidden' animate='show'>
       <LogoStyled onClick={clearSearch}>
         <h1>What's</h1>
         <img src={logo} alt='logo' />

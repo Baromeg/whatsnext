@@ -17,7 +17,7 @@ function App() {
     <div className='app'>
       <GlobalStyles />
       <Navbar></Navbar>
-      <Route path={['/gmae/:id', '/']}>
+      <Route path={['/game/:id', '/']}>
         <Home />
       </Route>
     </div>

@@ -4,7 +4,7 @@ const cors_url = 'https://cors-anywhere.herokuapp.com/'
 
 // * Base URL
 // const base_url_moviesIMDB = 'https://imdb-api.com/en/API/'
-const base_url_moviesOMDB = 'http://www.omdbapi.com/'
+const base_url_moviesOMDB = 'https://www.omdbapi.com/'
 const base_url_games = 'https://api.rawg.io/api/'
 // Getting the date
 const currentYear = new Date().getFullYear()

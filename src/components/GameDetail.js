@@ -26,7 +26,7 @@ const GameDetail = ({ pathID }) => {
     const element = e.target
     if (element.classList.contains('shadow')) {
       document.body.style.overflow = 'auto'
-      history.push('baltasar.tech/')
+      history.push('/')
     }
     console.log(element)
   }

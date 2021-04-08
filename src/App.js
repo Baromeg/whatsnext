@@ -17,7 +17,7 @@ function App() {
     <div className='app'>
       <GlobalStyles />
       <Navbar></Navbar>
-      <Route path={['/game/:id', '/']}>
+      <Route path={['baltasar.tech/game/:id', 'baltasar.tech/']}>
         <Home />
       </Route>
     </div>
